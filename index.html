@@ -1,0 +1,1078 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080a13">
+    <meta name="description"
+        content="BudgetBasics helps students learn budgeting through practical guides, interactive activities and educational tools.">
+    <title>BudgetBasics — NextGen BudgetBee</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" defer></script>
+    <script src="techwi.js" defer></script>
+</head>
+
+<body>
+    <div class="page-loader" id="pageLoader" aria-hidden="true">
+        <div class="loader-inner">
+            <div class="loader-logo-card"><img class="loader-techwiz-logo"
+                    src="https://aptech-studentconnect.com/wp-content/uploads/2026/08/Techwiz-7-Logo-HI-RES-scaled.png"
+                    alt="TechWiz 7"></div>
+            <span class="loader-project-label">A TECHWIZ 7 PROJECT <i>·</i> APTECH RAHIM YAR KHAN</span>
+            <h1 class="loader-welcome">WELCOME TO <b>NEX GEN CODERS</b></h1>
+            <p class="loader-caption">BUDGETBASICS <i>·</i> NEXTGEN BUDGETBEE</p>
+            <div class="loader-progress" aria-hidden="true"><i></i></div>
+            <span class="loader-status">GETTING YOUR SMART MONEY JOURNEY READY</span>
+        </div>
+    </div>
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="ambient-glow glow-left" aria-hidden="true"></div>
+    <div class="ambient-glow glow-right" aria-hidden="true"></div>
+    <div class="pointer-orbit" aria-hidden="true"><i></i></div>
+    <aside class="journey-rail" aria-hidden="true">
+        <svg viewBox="0 0 72 800" preserveAspectRatio="none">
+            <path class="journey-path-base" d="M36 0 C36 46 58 55 58 92 C58 132 16 143 16 185 C16 227 56 237 56 281 C56 324 18 335 18 378 C18 420 56 433 56 476 C56 520 16 532 16 576 C16 620 56 634 56 678 C56 724 36 738 36 800" />
+            <path class="journey-path-progress" id="journeyProgressPath" d="M36 0 C36 46 58 55 58 92 C58 132 16 143 16 185 C16 227 56 237 56 281 C56 324 18 335 18 378 C18 420 56 433 56 476 C56 520 16 532 16 576 C16 620 56 634 56 678 C56 724 36 738 36 800" />
+            <g class="journey-stop" transform="translate(58 92)"><circle r="15"/><text y="4">$</text></g>
+            <g class="journey-stop" transform="translate(18 378)"><circle r="15"/><text y="4">↗</text></g>
+            <g class="journey-stop" transform="translate(56 678)"><circle r="15"/><text y="4">✓</text></g>
+        </svg>
+    </aside>
+    <div class="scroll-bee" id="scrollBee" aria-hidden="true"><i></i><b></b><i></i></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <section class="techwiz-ribbon" id="techwizRibbon" aria-label="TechWiz global coding competition announcements">
+        <div class="shell techwiz-ribbon-inner">
+            <a class="techwiz-ribbon-badge" href="#about" aria-label="Learn about TechWiz">TECHWIZ <b>7</b></a>
+            <span class="techwiz-ribbon-context">APTECH CHAMPIONSHIP <i>·</i> NEXTGEN BUDGETBEE</span>
+            <div class="techwiz-slider" id="techwizSlider" aria-live="off">
+                <div class="techwiz-slide is-active" aria-hidden="false"><span>GLOBAL CODING STAGE</span><b>Ideas, code, and teams from around the world.</b></div>
+                <div class="techwiz-slide" aria-hidden="true"><span>BUILT FOR APTECH CODERS</span><b>Learn together. Build real projects. Compete globally.</b></div>
+                <div class="techwiz-slide" aria-hidden="true"><span>TEAM NEX GEN CODERS</span><b>BudgetBasics · Rahim Yar Khan, Pakistan</b></div>
+            </div>
+            <span class="sr-only" id="techwizSlideStatus" role="status" aria-live="polite"></span>
+            <span class="techwiz-ribbon-team">TEAM <b>NEX GEN CODERS</b> <i>·</i> 🇵🇰</span>
+            <div class="techwiz-slider-controls" aria-label="TechWiz announcement controls">
+                <button type="button" id="techwizSlidePrev" aria-label="Previous announcement">‹</button>
+                <span id="techwizSlideCount" aria-hidden="true">01 / 03</span>
+                <button type="button" id="techwizSlideNext" aria-label="Next announcement">›</button>
+                <button type="button" id="techwizSlidePause" aria-label="Pause announcements" title="Pause announcements">Ⅱ</button>
+            </div>
+        </div>
+    </section>
+    <aside class="header-tips" aria-label="Quick budgeting tips">
+        <div class="shell header-tips-inner">
+            <span class="header-tips-label"><i aria-hidden="true">✦</i> SMART TIPS</span>
+            <div class="header-tips-window" aria-hidden="true"><div class="header-tips-track">
+                <span>Save a little before you spend.</span><b>✦</b><span>Small expenses add up—track them.</span><b>✦</b><span>Separate needs from wants.</span><b>✦</b><span>Save a little before you spend.</span><b>✦</b><span>Small expenses add up—track them.</span><b>✦</b><span>Separate needs from wants.</span><b>✦</b>
+            </div></div>
+            <span class="header-tips-tag">MONEY HABITS <i>·</i> MADE SIMPLE</span>
+        </div>
+    </aside>
+    <header class="site-header" id="top">
+        <nav class="nav shell" aria-label="Main navigation">
+            <a class="brand" href="#home" aria-label="BudgetBasics home">
+                <span><strong>BudgetBasics</strong><small>NextGen BudgetBee</small></span>
+            </a>
+            <div class="techwiz-nav-wrap"><button class="nav-techwiz" id="techwizInfoTrigger" type="button"
+                    aria-expanded="false" aria-controls="techwizInfo" aria-label="About TechWiz International"><img
+                        class="techwiz-logo-image" src="https://aptech-studentconnect.com/wp-content/uploads/2026/08/Techwiz-7-Logo-HI-RES-scaled.png" alt="" aria-hidden="true"></button>
+                <div class="techwiz-info-card" id="techwizInfo" hidden><span class="section-index">INTERNATIONAL ·
+                        GLOBAL</span>
+                    <p>TechWiz is an international Aptech coding competition where student teams build projects and compete around the world.</p><a
+                        href="#about">About this project <span aria-hidden="true">↗</span></a>
+                </div>
+            </div><span class="brand-flag" role="img" aria-label="Flag of Pakistan"><svg viewBox="0 0 60 36"
+                    aria-hidden="true">
+                    <path fill="#fff" d="M2 2h56v32H2z" />
+                    <path fill="#01411c" d="M15 2h43v32H15z" />
+                    <circle cx="35" cy="18" r="10" fill="#fff" />
+                    <circle cx="39" cy="15" r="9" fill="#01411c" />
+                    <path fill="#fff" d="m44 7 1.7 4.1 4.4.3-3.4 2.8 1.1 4.2-3.8-2.3-3.8 2.3 1.1-4.2-3.4-2.8 4.4-.3z" />
+                </svg></span>
+            <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks"
+                aria-label="Open navigation"><span></span><span></span></button>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <div class="nav-dropdown"><button class="nav-drop-trigger" type="button" aria-expanded="false">Learn
+                        <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="m4 6 4 4 4-4" />
+                        </svg></button>
+                    <div class="nav-drop-menu"><a href="#basics">Budget basics</a><a href="#needs-wants">Needs vs
+                            wants</a><a href="#mistakes">Common mistakes</a><a href="#gallery">Learning gallery</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown"><button class="nav-drop-trigger" type="button" aria-expanded="false">Tools
+                        <svg class="nav-chevron" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="m4 6 4 4 4-4" />
+                        </svg></button>
+                    <div class="nav-drop-menu"><a href="#budget-guide">50 / 30 / 20 planner</a><a
+                            href="#savings-goal">Savings goal</a><a href="#expense-planner">Expense planner</a><a
+                            href="#currency">Currency converter</a><a href="#snapshot">Budget report</a><a
+                            href="#bill-generator">Create a bill</a></div>
+                </div>
+                <button class="nav-drop-trigger nav-chat-trigger" type="button" data-open-chat>BudgetBee AI
+                    <span>✦</span></button><a href="#about">About</a><a href="#contact">Contact</a>
+                <button class="theme-toggle" id="themeToggle" aria-label="Switch color theme"
+                    title="Switch color theme">☼</button>
+                <span class="nav-origin"><img class="aptech-nav-logo" src="https://aptech.cusc.vn/assets/img/core-img/logo/logo%20aptech2.png"
+                        alt="Aptech Computer Education"><small>RAHIM YAR KHAN · PAKISTAN</small></span>
+                <a class="button button-small" href="#assistant">Ask BudgetBee <span aria-hidden="true">↗</span></a>
+            </div>
+        </nav>
+    </header>
+    <main id="main">
+        <section class="hero section-pad" id="home">
+            <div class="hero-grid shell">
+                <div class="hero-copy reveal">
+                    <div class="eyebrow"><span class="pulse-dot"></span> NEXTGEN BUDGET EDUCATION <span
+                            class="eyebrow-divider"></span> 🇵🇰 Pakistan</div>
+                    <h1>Smart money.<br><span>Smarter choices.</span></h1>
+                    <p class="hero-lead">Build better money habits, one small decision at a time. Learn to plan income,
+                        understand spending, and make room for the goals that matter.</p>
+                    <div class="hero-actions"><a class="button" href="#basics">Start learning <span>↓</span></a><a
+                            class="button button-quiet" href="#assistant"><span class="play-icon">✦</span> Talk to
+                            BudgetBee AI</a></div>
+                    <div class="hero-tags"><span>Student friendly</span><span>Hands-on tools</span><span>Educational
+                            only</span></div>
+                    <p class="microcopy">A student project developed through learning at Aptech Rahim Yar Khan.</p>
+                </div>
+                <div class="hero-art reveal" aria-label="Illustration of a sample student budget dashboard">
+                    <div class="art-orbit orbit-one"></div>
+                    <div class="art-orbit orbit-two"></div>
+                    <div class="art-label label-top"><i></i> YOUR MONEY, IN FOCUS</div>
+                    <div class="cyber-bee" aria-label="Abstract BudgetBee AI mascot"><i
+                            class="bee-wing wing-left"></i><i class="bee-wing wing-right"></i><span class="bee-core"><i
+                                class="bee-eye"></i><i class="bee-eye"></i><b></b></span><i class="bee-tail"></i></div>
+                    <div class="dashboard-card main-dash">
+                        <div class="dash-head">
+                            <div><span class="dash-kicker">SAMPLE MONTHLY PLAN</span>
+                                <h3>Student snapshot</h3>
+                            </div><span class="dash-icon">↗</span>
+                        </div>
+                        <div class="balance-label">Planned income</div>
+                        <div class="balance">PKR 50,000</div>
+                        <div class="chart-wrap">
+                            <div class="donut">
+                                <div><strong>50<span>/</span>30<span>/</span>20</strong><small>budget guide</small>
+                                </div>
+                            </div>
+                            <div class="chart-legend"><span><i class="dot cyan"></i>Needs <b>50%</b></span><span><i
+                                        class="dot violet"></i>Wants <b>30%</b></span><span><i
+                                        class="dot lime"></i>Savings <b>20%</b></span></div>
+                        </div>
+                        <div class="dash-foot"><span><i class="tiny-check">✓</i> Learning by doing</span><span>01 /
+                                04</span></div>
+                    </div>
+                    <div class="float-card saving-float">
+                        <div class="float-icon">↗</div><span>Goal progress</span><strong>Build a habit</strong>
+                        <div class="mini-progress"><i></i></div>
+                    </div>
+                    <div class="float-card bee-float"><span class="bee-orb">✦</span><span><b>BudgetBee</b><small>Ready
+                                to learn</small></span><span class="online-dot"></span></div>
+                    <div class="float-card expense-float"><span class="expense-mark">−</span><span>Plan
+                            expenses<small>Keep it intentional</small></span></div>
+                </div>
+            </div>
+            <div class="hero-bottom shell"><span>LEARN THE LANGUAGE OF MONEY</span>
+                <div class="hero-bottom-line"></div><span>LESS STRESS. MORE CLARITY.</span>
+            </div>
+        </section>
+        <section class="feature-strip shell" aria-label="Website features">
+            <div><strong>06</strong><span>Learning modules</span></div>
+            <div><strong>50·30·20</strong><span>Budgeting guide</span></div>
+            <div><strong>06</strong><span>Interactive tools</span></div>
+            <div><strong>01</strong><span>Friendly AI guide</span></div>
+        </section>
+
+        <section class="master-section section-pad" id="mastery">
+            <div class="shell master-shell">
+                <div class="master-head">
+                    <div><span class="section-index">THE LEARNING PATH · 01—06</span>
+                        <h2>Master your <em>money.</em></h2>
+                    </div><span class="master-scroll-note">SCROLL TO EXPLORE <b>↓</b></span>
+                </div>
+                <div class="master-track-wrap">
+                    <div class="master-track">
+                        <a class="master-card" href="#basics"><span class="master-card-no">01</span><span
+                                class="master-card-icon">⌁</span><span class="master-card-label">FOUNDATIONS</span>
+                            <h3>Budgeting<br>basics</h3>
+                            <p>Start with income, costs, needs, wants and savings.</p><i>↗</i>
+                        </a>
+                        <a class="master-card" href="#needs-wants"><span class="master-card-no">02</span><span
+                                class="master-card-icon">◈</span><span class="master-card-label">MAKE A CHOICE</span>
+                            <h3>Needs vs<br>wants</h3>
+                            <p>Practice pausing before a purchase.</p><i>↗</i>
+                        </a>
+                        <a class="master-card" href="#tools"><span class="master-card-no">03</span><span
+                                class="master-card-icon">◌</span><span class="master-card-label">A COMMON GUIDE</span>
+                            <h3>50 / 30 / 20</h3>
+                            <p>Explore an example way to split income.</p><i>↗</i>
+                        </a>
+                        <a class="master-card" href="#tools"><span class="master-card-no">04</span><span
+                                class="master-card-icon">◎</span><span class="master-card-label">LOOK AHEAD</span>
+                            <h3>Savings<br>goals</h3>
+                            <p>Estimate the journey to a savings target.</p><i>↗</i>
+                        </a>
+                        <a class="master-card" href="#tools"><span class="master-card-no">05</span><span
+                                class="master-card-icon">▤</span><span class="master-card-label">STAY AWARE</span>
+                            <h3>Expense<br>planner</h3>
+                            <p>Keep a simple plan for monthly costs.</p><i>↗</i>
+                        </a>
+                        <a class="master-card" href="#mistakes"><span class="master-card-no">06</span><span
+                                class="master-card-icon">↻</span><span class="master-card-label">LEARN & RESET</span>
+                            <h3>Money<br>mistakes</h3>
+                            <p>Spot common habits and try a reset.</p><i>↗</i>
+                        </a>
+                    </div>
+                </div>
+                <div class="master-progress"><i></i></div>
+            </div>
+        </section>
+
+        <section class="section-pad section" id="basics">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">01 / THE FOUNDATIONS</span>
+                        <h2>Master the <em>basics.</em></h2>
+                    </div>
+                    <p>Simple ideas make money easier to understand. Start with the pieces that shape a monthly budget.
+                    </p>
+                </div>
+                <div class="concept-grid">
+                    <article class="concept-card reveal"><span class="concept-icon">↗</span><span
+                            class="card-number">01</span>
+                        <h3>Income</h3>
+                        <p>Money you receive from a job, allowance, or other source.</p><small>Example · Monthly
+                            allowance</small>
+                    </article>
+                    <article class="concept-card reveal"><span class="concept-icon">▤</span><span
+                            class="card-number">02</span>
+                        <h3>Fixed expenses</h3>
+                        <p>Costs that are usually similar each month and need planning.</p><small>Example · Course
+                            fee</small>
+                    </article>
+                    <article class="concept-card reveal"><span class="concept-icon">⌁</span><span
+                            class="card-number">03</span>
+                        <h3>Variable expenses</h3>
+                        <p>Costs that can change based on your choices and needs.</p><small>Example · Snacks or
+                            travel</small>
+                    </article>
+                    <article class="concept-card reveal"><span class="concept-icon">◇</span><span
+                            class="card-number">04</span>
+                        <h3>Needs</h3>
+                        <p>Essentials that support health, safety, or education.</p><small>Example · Basic
+                            transport</small>
+                    </article>
+                    <article class="concept-card reveal"><span class="concept-icon">✳</span><span
+                            class="card-number">05</span>
+                        <h3>Wants</h3>
+                        <p>Optional extras that can make life enjoyable but can wait.</p><small>Example · A new
+                            game</small>
+                    </article>
+                    <article class="concept-card reveal"><span class="concept-icon">◎</span><span
+                            class="card-number">06</span>
+                        <h3>Savings</h3>
+                        <p>Money set aside for future plans or unexpected costs.</p><small>Example · Laptop fund</small>
+                    </article>
+                </div>
+                <div class="basics-bottom">
+                    <div class="sample-budget reveal">
+                        <div class="card-topline"><span>EXAMPLE · NOT PERSONAL DATA</span><span>PKR / MONTH</span></div>
+                        <h3>A student budget, at a glance</h3>
+                        <div class="sample-row"><span><i class="dot cyan"></i>Education</span><b>12,000</b>
+                            <div class="sample-track"><i style="width:70%"></i></div>
+                        </div>
+                        <div class="sample-row"><span><i class="dot violet"></i>Transport</span><b>5,000</b>
+                            <div class="sample-track"><i style="width:38%"></i></div>
+                        </div>
+                        <div class="sample-row"><span><i class="dot lime"></i>Food & essentials</span><b>10,000</b>
+                            <div class="sample-track"><i style="width:58%"></i></div>
+                        </div>
+                        <div class="sample-row"><span><i class="dot orange"></i>Personal & fun</span><b>8,000</b>
+                            <div class="sample-track"><i style="width:48%"></i></div>
+                        </div>
+                        <div class="sample-row"><span><i class="dot blue"></i>Savings</span><b>15,000</b>
+                            <div class="sample-track"><i style="width:86%"></i></div>
+                        </div>
+                        <p class="fine-print">Illustrative values only. A budget depends on each student's
+                            circumstances.</p>
+                    </div>
+                    <div class="quiz-card reveal"><span class="section-index">QUICK KNOWLEDGE CHECK</span>
+                        <h3>Which is usually a need?</h3>
+                        <p>Choose the best answer for a student.</p>
+                        <div class="quiz-options" role="group" aria-label="Choose a need"><button data-quiz="correct">A
+                                required textbook</button><button data-quiz="wrong">A designer phone
+                                case</button><button data-quiz="wrong">A movie ticket</button></div>
+                        <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad section tint-section" id="needs-wants">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">02 / PAUSE & THINK</span>
+                        <h2>Need it, or <em>want it?</em></h2>
+                    </div>
+                    <p>There is no shame in wanting something. A little pause can help you choose what fits your
+                        priorities.</p>
+                </div>
+                <div class="challenge-layout">
+                    <div class="challenge-card reveal">
+                        <div class="challenge-top"><span class="section-index">NEEDS VS WANTS CHALLENGE</span><span
+                                id="challengeCount">01 / 08</span></div>
+                        <div class="challenge-progress"><i id="challengeBar"></i></div>
+                        <div id="challengePrompt" class="challenge-prompt"><span class="item-symbol">▤</span><span
+                                class="item-category">ITEM 01</span>
+                            <h3>Textbook for class</h3>
+                            <p>Classify this example based on the situation.</p>
+                        </div>
+                        <div class="challenge-actions"><button class="choice-button" data-choice="need">It's a need
+                                <span>↗</span></button><button class="choice-button secondary-choice"
+                                data-choice="want">It's a want <span>↗</span></button></div>
+                        <div id="challengeFeedback" class="challenge-feedback" aria-live="polite"></div><button
+                            class="text-button" id="nextChallenge" hidden>Next item →</button>
+                    </div>
+                    <div class="decision-guide reveal"><span class="section-index">A FOUR-QUESTION PAUSE</span>
+                        <h3>Think before<br>you buy.</h3>
+                        <div class="decision-list">
+                            <div><b>01</b><span>Do I need it right now?</span></div>
+                            <div><b>02</b><span>Can I afford it after essentials?</span></div>
+                            <div><b>03</b><span>Could I wait a few days?</span></div>
+                            <div><b>04</b><span>Will it help me long-term?</span></div>
+                        </div>
+                        <p>Use these questions as a reflection tool, not a strict rulebook.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad section" id="tools">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">03 / PRACTICE WITH EXAMPLES</span>
+                        <h2>Small tools.<br><em>Clearer picture.</em></h2>
+                    </div>
+                    <p>Try a few simple calculations with sample amounts. Your entries stay in this browser session and
+                        are not sent to a server.</p>
+                </div>
+                <div class="tools-grid">
+                    <article class="tool-card rule-card reveal" id="budget-guide">
+                        <div class="tool-head">
+                            <div><span class="section-index">THE CLASSIC FRAMEWORK</span>
+                                <h3>50 / 30 / 20</h3>
+                            </div><span class="tool-symbol">◌</span>
+                        </div>
+                        <p>Explore one way to divide monthly income into needs, wants, and savings.</p>
+                        <form id="ruleForm" class="inline-form"><label for="incomeInput">Monthly income
+                                <span>PKR</span></label>
+                            <div class="input-action"><input id="incomeInput" type="number" min="0" step="any"
+                                    placeholder="e.g. 50000" inputmode="decimal"><button class="button"
+                                    type="submit">Calculate <span>↗</span></button></div>
+                            <div class="form-error" id="ruleError" aria-live="polite"></div>
+                        </form>
+                        <div class="allocation-results" id="ruleResults" aria-live="polite">
+                            <div><span><i class="dot cyan"></i>Needs · 50%</span><b>—</b><i
+                                    class="result-bar"><i></i></i></div>
+                            <div><span><i class="dot violet"></i>Wants · 30%</span><b>—</b><i
+                                    class="result-bar"><i></i></i></div>
+                            <div><span><i class="dot lime"></i>Savings · 20%</span><b>—</b><i
+                                    class="result-bar"><i></i></i></div>
+                        </div>
+                        <p class="fine-print">An educational guideline, not financial advice. Your situation may call
+                            for a different split.</p>
+                    </article>
+                    <article class="tool-card savings-card reveal" id="savings-goal">
+                        <div class="tool-head">
+                            <div><span class="section-index">A GOAL YOU CAN SEE</span>
+                                <h3>Build a savings goal</h3>
+                            </div><span class="tool-symbol">◎</span>
+                        </div>
+                        <form id="savingsForm" class="field-grid"><label>Goal name <small>(optional)</small><input
+                                    id="goalName" maxlength="40" placeholder="e.g. Study laptop"></label><label>Target
+                                (PKR)<input id="goalTarget" type="number" min="1" step="any" placeholder="150000"
+                                    required></label><label>Already
+                                saved <small>(optional · defaults to 0)</small><input id="goalSaved" type="number"
+                                    min="0" step="any" placeholder="0"></label><label>Monthly contribution
+                                <small>(optional)</small><input id="goalMonthly" type="number" min="0" step="any"
+                                    placeholder="0"></label><button class="button" type="submit">See my plan
+                                <span>↗</span></button></form>
+                        <div class="form-error" id="savingsError" aria-live="polite"></div>
+                        <div id="savingsResult" class="savings-result" aria-live="polite">
+                            <div class="savings-meter"><i id="savingsMeter"></i></div>
+                            <div class="savings-meta"><span id="savingsProgress">Your progress appears here</span><b
+                                    id="savingsEta">—</b></div>
+                        </div>
+                    </article>
+                </div>
+                <article class="tool-card expense-card reveal" id="expense-planner">
+                    <div class="expense-heading">
+                        <div><span class="section-index">PLAN A MONTH</span>
+                            <h3>Expense planner</h3>
+                            <p>Add sample expenses to see how a plan balances out. This list is temporary.</p>
+                        </div>
+                        <div class="expense-total"><span>REMAINING BALANCE</span><b id="remainingBalance">PKR 0</b>
+                        </div>
+                    </div>
+                    <form id="expenseForm" class="expense-form"><label>Date<input id="expenseDate" type="date"
+                                required></label><label>Category<select id="expenseCategory" required>
+                                <option value="">Choose category</option>
+                                <option>Food</option>
+                                <option>Transport</option>
+                                <option>Education</option>
+                                <option>Entertainment</option>
+                                <option>Shopping</option>
+                                <option>Utilities</option>
+                                <option>Miscellaneous</option>
+                            </select></label><label class="description-field">Description<input id="expenseDescription"
+                                maxlength="70" placeholder="What is it for?" required></label><label>Amount (PKR)<input
+                                id="expenseAmount" type="number" min="0.01" step="any" placeholder="0"
+                                required></label><button class="button" type="submit">Add expense
+                            <span>+</span></button></form>
+                    <div class="form-error" id="expenseError" aria-live="polite"></div>
+                    <div class="planner-income"><label for="plannerIncome">Sample monthly income (PKR)</label><input
+                            id="plannerIncome" type="number" min="0" step="any"
+                            placeholder="Add income to calculate balance"><span>Total expenses <b id="expenseTotal">PKR
+                                0</b></span><button type="button" class="text-button" id="clearExpenses">Clear
+                            all</button></div>
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Category</th>
+                                    <th>Description</th>
+                                    <th>Amount</th>
+                                    <th><span class="sr-only">Actions</span></th>
+                                </tr>
+                            </thead>
+                            <tbody id="expenseRows">
+                                <tr class="empty-row">
+                                    <td colspan="5">Your planned items will appear here.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="fine-print">Expenses are held in memory for this session only and clear when you reload
+                        the page.</p>
+                </article>
+                <article class="tool-card quick-tools reveal">
+                    <div class="quick-tool-copy"><span class="section-index">MORE WAYS TO PRACTICE</span>
+                        <h3>Quick tools</h3>
+                        <p>Estimate a remaining budget or categorize a purchase with a little context.</p>
+                    </div>
+                    <form id="budgetForm" class="quick-tool"><label>Budget amount<input id="quickBudget" type="number"
+                                min="0" step="any" placeholder="PKR amount"></label><label>Planned expenses<input
+                                id="quickSpent" type="number" min="0" step="any"
+                                placeholder="PKR amount"></label><button class="button button-dark" type="submit">Check
+                            balance</button><output id="quickBudgetResult" aria-live="polite">Your balance will appear
+                            here.</output></form>
+                    <form id="categoryForm" class="quick-tool"><label>Purchase idea<input id="purchaseIdea"
+                                placeholder="e.g. replacement school bag"></label><label>Why do you need it?<select
+                                id="purchaseReason">
+                                <option value="">Choose a reason</option>
+                                <option value="essential">Essential for health, safety, or study</option>
+                                <option value="replace">Replacing something broken or worn out</option>
+                                <option value="enjoyment">Mostly for enjoyment or an upgrade</option>
+                            </select></label><button class="button button-dark" type="submit">Think it
+                            through</button><output id="categoryResult" aria-live="polite">A suggestion will appear
+                            here.</output></form>
+                    <form id="simpleCalcForm" class="quick-tool simple-calc"><label for="calcExpression">Simple
+                            calculator <span class="subtle">Use + − × ÷ and parentheses</span></label><input
+                            id="calcExpression" inputmode="decimal" placeholder="e.g. 1200 + 450" maxlength="40"><button
+                            class="button button-dark" type="submit">Calculate</button><output id="calcResult"
+                            aria-live="polite">Result appears here.</output></form>
+                </article>
+                <article class="tool-card currency-card reveal" id="currency">
+                    <div class="tool-head">
+                        <div><span class="section-index">LEARNING TOOL · DAILY REFERENCE RATE</span>
+                            <h3>Currency converter</h3>
+                        </div><span class="tool-symbol">↔</span>
+                    </div>
+                    <p>Explore conversions between PKR, USD, and other supported currencies using daily reference rates.
+                    </p>
+                    <form id="currencyForm" class="currency-form" novalidate>
+                        <label>Amount<input id="currencyAmount" type="number" min="0" step="any" value="1"
+                                inputmode="decimal"></label>
+                        <label>From<select id="currencyFrom">
+                                <option value="PKR">PKR · Pakistani Rupee</option>
+                                <option value="USD">USD · US Dollar</option>
+                            </select></label>
+                        <button type="button" id="swapCurrency" class="swap-currency"
+                            aria-label="Swap currencies">⇄</button>
+                        <label>To<select id="currencyTo">
+                                <option value="USD">USD · US Dollar</option>
+                                <option value="PKR">PKR · Pakistani Rupee</option>
+                            </select></label>
+                        <button class="button" type="submit">Convert <span>↗</span></button>
+                    </form>
+                    <div class="currency-result" id="currencyResult" aria-live="polite">Connect to the internet to load
+                        current daily rates.</div>
+                    <div class="currency-meta"><span id="rateUpdated">Rates load when available.</span><span>Educational
+                            estimate; providers may use different rates or fees.</span></div>
+                    <a class="rate-credit" href="https://www.exchangerate-api.com" target="_blank"
+                        rel="noopener noreferrer">Exchange rates by ExchangeRate-API</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-pad section tint-section" id="mistakes">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">04 / COMMON MONEY MOMENTS</span>
+                        <h2>Learn from the <em>little slips.</em></h2>
+                    </div>
+                    <p>Small patterns are easier to change when you can spot them. Open a card for a student scenario
+                        and a practical reset.</p>
+                </div>
+                <div class="mistake-grid">
+                    <details class="mistake-card reveal">
+                        <summary><span class="mistake-no">01</span><span><b>Impulse buying</b><small>Spending before you
+                                    pause</small></span><i>＋</i></summary>
+                        <div class="mistake-content"><b>The moment</b>
+                            <p>A flash sale tempts you to buy something you hadn't planned for.</p><b>Why it matters</b>
+                            <p>Repeated quick purchases can crowd out priorities.</p><b>Try this</b>
+                            <p>Wait a day, then decide if it still feels worthwhile.</p>
+                        </div>
+                    </details>
+                    <details class="mistake-card reveal">
+                        <summary><span class="mistake-no">02</span><span><b>Ignoring small expenses</b><small>Little
+                                    purchases add up</small></span><i>＋</i></summary>
+                        <div class="mistake-content"><b>The moment</b>
+                            <p>Snacks and small rides never make it into your plan.</p><b>Why it matters</b>
+                            <p>It becomes harder to explain where the budget went.</p><b>Try this</b>
+                            <p>Keep a short weekly note of everyday spending.</p>
+                        </div>
+                    </details>
+                    <details class="mistake-card reveal">
+                        <summary><span class="mistake-no">03</span><span><b>Late payments</b><small>Forgetting the due
+                                    date</small></span><i>＋</i></summary>
+                        <div class="mistake-content"><b>The moment</b>
+                            <p>A school or household bill slips your mind.</p><b>Why it matters</b>
+                            <p>Late fees or service interruptions may follow.</p><b>Try this</b>
+                            <p>Add reminders to a calendar you already use.</p>
+                        </div>
+                    </details>
+                    <details class="mistake-card reveal">
+                        <summary><span class="mistake-no">04</span><span><b>Unused subscriptions</b><small>Paying for
+                                    what you don't use</small></span><i>＋</i></summary>
+                        <div class="mistake-content"><b>The moment</b>
+                            <p>A free trial quietly becomes a recurring charge.</p><b>Why it matters</b>
+                            <p>Recurring costs are easy to overlook in a monthly plan.</p><b>Try this</b>
+                            <p>Review subscriptions and cancellation dates regularly.</p>
+                        </div>
+                    </details>
+                    <details class="mistake-card reveal">
+                        <summary><span class="mistake-no">05</span><span><b>Spending without a plan</b><small>Decisions
+                                    made on the fly</small></span><i>＋</i></summary>
+                        <div class="mistake-content"><b>The moment</b>
+                            <p>You spend first and hope the rest works out later.</p><b>Why it matters</b>
+                            <p>Essentials and goals can be harder to prioritize.</p><b>Try this</b>
+                            <p>Start with a simple list of income and upcoming costs.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad section" id="gallery">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">05 / VISUAL LEARNING</span>
+                        <h2>Learn <em>visually.</em></h2>
+                    </div>
+                    <p>Quick visual explainers for the ideas you'll use throughout the site. Filter by topic or search
+                        the gallery.</p>
+                </div>
+                <div class="search-panel reveal">
+                    <div class="search-field"><span>⌕</span><label class="sr-only" for="globalSearch">Search learning
+                            content</label><input id="globalSearch" type="search"
+                            placeholder="Search budgeting, savings, needs…"><kbd>SEARCH</kbd></div>
+                    <div id="searchResults" class="search-results" aria-live="polite" hidden></div>
+                </div>
+                <div class="filter-row reveal" role="group" aria-label="Filter visual lessons"><button
+                        class="filter-chip active" data-filter="all">All</button><button class="filter-chip"
+                        data-filter="budgeting">Budgeting</button><button class="filter-chip"
+                        data-filter="saving">Saving</button><button class="filter-chip"
+                        data-filter="expenses">Expenses</button><button class="filter-chip" data-filter="needs">Needs &
+                        wants</button></div>
+                <div class="gallery-grid" id="galleryGrid">
+                    <article class="gallery-card reveal" data-category="needs"
+                        data-search="needs wants priority essentials choice">
+                        <div class="visual visual-needs" role="img"
+                            aria-label="Two circles compare essential needs with optional wants"><span>NEEDS</span>
+                            <div class="venn"><i></i><i></i><b>YOUR<br>CHOICE</b></div><span>WANTS</span>
+                        </div>
+                        <div class="gallery-caption"><span>NEEDS & WANTS</span>
+                            <h3>Essentials and extras</h3>
+                            <p>Sort purchases by their role in your life.</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card reveal" data-category="budgeting"
+                        data-search="50 30 20 rule needs wants savings monthly income">
+                        <div class="visual visual-rule" role="img"
+                            aria-label="50 percent needs, 30 percent wants, and 20 percent savings">
+                            <div class="rule-ring">
+                                <span>50<small>%</small></span><span>30<small>%</small></span><span>20<small>%</small></span>
+                            </div><i>PLAN<br>WITH<br>PURPOSE</i>
+                        </div>
+                        <div class="gallery-caption"><span>BUDGETING</span>
+                            <h3>A simple split</h3>
+                            <p>One common framework for a monthly plan.</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card reveal" data-category="saving"
+                        data-search="saving challenge goal progress habit">
+                        <div class="visual visual-goal" role="img"
+                            aria-label="A stepped path illustrates progress toward a savings goal">
+                            <div class="goal-star">✦</div>
+                            <div class="goal-path"><i></i><i></i><i></i><b>GOAL</b></div><span>SMALL STEPS<br>ADD
+                                UP</span>
+                        </div>
+                        <div class="gallery-caption"><span>SAVING</span>
+                            <h3>Progress over time</h3>
+                            <p>A regular habit can move a goal forward.</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card reveal" data-category="expenses"
+                        data-search="monthly budget cycle income plan spend review expenses">
+                        <div class="visual visual-cycle" role="img" aria-label="A cycle from plan to spend to review">
+                            <div class="cycle-ring"><b>PLAN</b><b>SPEND</b><b>REVIEW</b><i>↻</i></div>
+                        </div>
+                        <div class="gallery-caption"><span>EXPENSES</span>
+                            <h3>Repeat and refine</h3>
+                            <p>Reviewing your plan helps you learn what fits.</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card reveal" data-category="expenses"
+                        data-search="expense categories food education transport plan">
+                        <div class="visual visual-categories" role="img"
+                            aria-label="Sample spending categories shown as proportional horizontal bars">
+                            <div><span>EDUCATION</span><i style="width:84%"></i></div>
+                            <div><span>FOOD</span><i style="width:64%"></i></div>
+                            <div><span>TRANSPORT</span><i style="width:42%"></i></div>
+                            <div><span>SAVINGS</span><i style="width:74%"></i></div>
+                        </div>
+                        <div class="gallery-caption"><span>EXPENSES</span>
+                            <h3>Give costs a name</h3>
+                            <p>Categories make spending patterns easier to see.</p>
+                        </div>
+                    </article>
+                    <article class="gallery-card reveal" data-category="budgeting"
+                        data-search="smart spending money decision plan wait budget">
+                        <div class="visual visual-smart" role="img"
+                            aria-label="A pause icon surrounded by questions for thoughtful spending">
+                            <div class="pause-symbol"><i></i><i></i></div><span>PAUSE</span><small>THINK ·
+                                CHOOSE</small>
+                        </div>
+                        <div class="gallery-caption"><span>BUDGETING</span>
+                            <h3>A thoughtful pause</h3>
+                            <p>Check priorities before you make a purchase.</p>
+                        </div>
+                    </article>
+                </div>
+                <p class="empty-state" id="galleryEmpty" hidden>No matching content found.</p>
+            </div>
+        </section>
+
+        <section class="section-pad section ai-section" id="assistant">
+            <div class="shell ai-shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">06 / YOUR LEARNING COMPANION</span>
+                        <h2>Meet BudgetBee <em>AI.</em></h2>
+                    </div>
+                    <p>Ask about budgeting basics and student spending. Replies come from a local educational guide,
+                        right in your browser.</p>
+                </div>
+                <div class="ai-layout reveal">
+                    <div class="ai-intro">
+                        <div class="ai-character" id="aiCharacter">
+                            <div class="character-aura"></div>
+                            <div class="character-face"><span class="face-eyes">• •</span><span
+                                    class="face-smile">⌣</span></div><i class="character-spark spark-a">✦</i><i
+                                class="character-spark spark-b">✧</i>
+                        </div><span class="section-index">BUDGETBEE LEARNING GUIDE</span>
+                        <h3 id="assistantName">Nova is here to help.</h3>
+                        <p>Friendly, practical explanations for budgeting, saving, needs, wants, and everyday money
+                            habits.</p>
+                        <div class="persona-switch" role="group" aria-label="Choose an assistant"><button
+                                data-persona="nova" class="persona-button selected">NOVA <small>Warm &
+                                    curious</small></button><button data-persona="zayn" class="persona-button">ZAYN
+                                <small>Calm & focused</small></button></div>
+                        <p class="ai-disclaimer">BudgetBee AI provides basic educational information, not professional
+                            financial advice.</p>
+                    </div>
+                    <div class="chat-panel">
+                        <button class="icon-button chat-close" id="closeChat" type="button"
+                            aria-label="Close BudgetBee chat" title="Close chat">×</button>
+                        <div class="chat-head">
+                            <div class="chat-status"><span class="chat-brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><ellipse cx="11" cy="11" rx="5" ry="3.5"/><ellipse cx="21" cy="11" rx="5" ry="3.5"/><ellipse cx="16" cy="19" rx="6.5" ry="8"/><path d="M10 18h12M10.5 22h11M13 10l-2-3m8 3 2-3"/><circle cx="13.5" cy="16" r=".8"/><circle cx="18.5" cy="16" r=".8"/></svg><i></i></span><span><b>BudgetBee AI</b><small id="chatStatus">Online ·
+                                        Educational demo</small></span></div>
+                        </div>
+                        <div class="chat-tools-bar"><span class="chat-tools-title">LANGUAGE &amp; VOICE</span>
+                            <div class="chat-controls"><label class="sr-only" for="languageSelect">Response
+                                    language</label><select id="languageSelect">
+                                    <option value="en">English</option>
+                                    <option value="ur">Urdu</option>
+                                    <option value="roman">Roman Urdu</option>
+                                    <option value="hi">Hindi</option>
+                                    <option value="ar">Arabic</option>
+                                    <option value="es">Spanish</option>
+                                    <option value="fr">French</option>
+                                    <option value="de">German</option>
+                                    <option value="zh">Chinese</option>
+                                    <option value="ja">Japanese</option>
+                                </select><button class="icon-button" id="voiceCallButton"
+                                    aria-label="Start browser voice conversation"
+                                    title="Start voice conversation">◖))</button></div>
+                        </div>
+                        <div class="persona-switch chat-persona-switch" role="group"
+                            aria-label="Choose BudgetBee assistant"><button data-persona="nova"
+                                class="persona-button selected">NOVA <small>Warm</small></button><button
+                                data-persona="zayn" class="persona-button">ZAYN <small>Focused</small></button></div>
+                        <div class="chat-messages" id="chatMessages" aria-live="polite" aria-relevant="additions text">
+                            <div class="message ai-message"><span class="message-avatar">✦</span>
+                                <div><small>BudgetBee</small>
+                                    <p>Hi! I'm here to make budgeting ideas easier to understand. What would you like to
+                                        explore?</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="suggested-prompts"><button>What is a need?</button><button>Explain the 50-30-20
+                                rule</button><button>How can I avoid overspending?</button></div>
+                        <form id="chatForm" class="chat-form"><label class="sr-only" for="chatInput">Message BudgetBee
+                                AI</label><input id="chatInput" maxlength="400" placeholder="Ask a budgeting question…"
+                                autocomplete="off"><button type="button" id="micButton" class="icon-button"
+                                aria-label="Use voice input" title="Voice input">♩</button><button type="submit"
+                                class="send-button" aria-label="Send message">↑</button></form>
+                        <div class="chat-foot"><span id="voiceNotice">Replies are read aloud after you send them when supported. Use Stop voice to pause.</span><button id="stopSpeech" type="button" class="text-button">Stop
+                                voice</button></div>
+                    </div>
+                </div>
+                <button type="button" class="button button-small open-chat-inline" data-open-chat>OPEN BUDGETBEE CHAT
+                    <span>↗</span></button>
+                <div class="voice-note"><span>VOICE FEATURES USE YOUR BROWSER</span><span>Speech support and available
+                        voices vary by device and language.</span></div>
+            </div>
+        </section>
+
+        <section class="section-pad section snapshot-section" id="snapshot">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">07 / SESSION VIEW</span>
+                        <h2>Your budget <em>snapshot.</em></h2>
+                    </div>
+                    <p>A live summary of the temporary values entered in the planner. Reloading clears this example
+                        data.</p>
+                </div>
+                <div class="snapshot-grid reveal">
+                    <div class="snapshot-main">
+                        <div class="snapshot-header">
+                            <div><span class="section-index">CURRENT SESSION</span>
+                                <h3>Plan overview</h3>
+                            </div>
+                            <div class="snapshot-controls"><span class="sample-badge">PRIVATE TO THIS SESSION</span>
+                                <div><button type="button" class="button button-small" id="savePdf">Download
+                                        PDF</button><button type="button" class="button button-small button-quiet"
+                                        id="printPdf">Print / Save as PDF</button><button type="button"
+                                        class="button button-small button-quiet" id="sharePdf">Share PDF</button></div>
+                            </div>
+                        </div>
+                        <p class="pdf-status" id="pdfStatus" role="status" aria-live="polite"></p>
+                        <div class="snapshot-numbers">
+                            <div><span>Income</span><b id="snapIncome">PKR 0</b></div>
+                            <div><span>Expenses</span><b id="snapExpenses">PKR 0</b></div>
+                            <div><span>Remaining</span><b id="snapRemaining">PKR 0</b></div>
+                            <div><span>Needs guide · 50%</span><b id="snapNeeds">PKR 0</b></div>
+                            <div><span>Wants guide · 30%</span><b id="snapWants">PKR 0</b></div>
+                            <div><span>Savings guide · 20%</span><b id="snapSavings">PKR 0</b></div>
+                        </div>
+                        <div class="snapshot-chart">
+                            <div class="snapshot-donut" id="snapshotDonut"><span><b
+                                        id="snapPercent">0%</b><small>planned</small></span></div>
+                            <div class="snapshot-legend"><span><i class="dot cyan"></i>Planned expenses <b
+                                        id="snapExpensePct">0%</b></span><span><i class="dot lime"></i>Remaining <b
+                                        id="snapLeftPct">0%</b></span></div>
+                        </div>
+                        <div class="snapshot-categories"><span class="section-index">EXPENSES BY CATEGORY</span>
+                            <div id="snapshotCategories">
+                                <p>No expenses in this session yet.</p>
+                            </div>
+                        </div>
+                        <p class="fine-print">The needs, wants, and savings amounts are example allocations using the
+                            50/30/20 guide, not measured categories.</p>
+                    </div>
+                    <div class="snapshot-side"><span class="section-index">A HEALTHY HABIT</span>
+                        <div class="side-orb">◎</div>
+                        <h3>Clarity comes from checking in.</h3>
+                        <p>A budget is a flexible learning tool. Revisit your plan when circumstances change.</p><a
+                            class="text-button" href="#tools">Open the expense planner ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad section bill-section" id="bill-generator">
+            <div class="shell">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">08 / BILL MAKER</span>
+                        <h2>Create a simple <em>bill.</em></h2>
+                    </div>
+                    <p>Prepare an itemized bill in PKR, add a QR summary, then download it as a PDF or print it.</p>
+                </div>
+                <div class="bill-layout reveal">
+                    <form class="bill-form" id="billForm">
+                        <div class="bill-form-heading"><span class="section-index">BILL DETAILS</span><b
+                                id="billNumberLabel">BB-2026-0001</b></div>
+                        <div class="bill-fields">
+                            <label>Business / sender<input id="billIssuer" maxlength="60" value="BudgetBasics"
+                                    required></label>
+                            <label>Contact details<input id="billContact" maxlength="100"
+                                    placeholder="Email or phone (optional)"></label>
+                            <label>Bill to<input id="billClient" maxlength="60" placeholder="Customer name"
+                                    required></label>
+                            <label>Bill date<input id="billDate" type="date" required></label>
+                        </div>
+                        <div class="bill-items-head"><span>ITEMS</span><span>QTY · PRICE (PKR)</span></div>
+                        <div id="billItems" class="bill-items">
+                            <div class="bill-item-row"><input class="bill-item-name" maxlength="80"
+                                    aria-label="Item description" placeholder="Item or service" required><input
+                                    class="bill-item-qty" type="number" min="0.01" step="0.01" value="1"
+                                    aria-label="Quantity" required><input class="bill-item-price" type="number" min="0"
+                                    step="0.01" placeholder="0.00" aria-label="Unit price in PKR" required><button
+                                    type="button" class="bill-remove" aria-label="Remove item"
+                                    title="Remove item">×</button></div>
+                        </div>
+                        <button type="button" class="bill-add" id="addBillItem">＋ Add another item</button>
+                        <label class="bill-note-label">Note <span>(optional)</span><textarea id="billNote" rows="2"
+                                maxlength="180" placeholder="Payment terms or a short note"></textarea></label>
+                        <div class="bill-total-line"><span>Bill total</span><b id="billTotal">PKR 0.00</b></div>
+                        <div class="bill-actions"><button type="submit" class="button button-small">Generate
+                                bill</button><button type="button" class="button button-small button-quiet"
+                                id="billPdf">Download bill PDF</button><button type="button"
+                                class="button button-small button-quiet" id="billPrint">Print / Save as PDF</button>
+                        </div>
+                        <p class="pdf-status" id="billStatus" role="status" aria-live="polite">Your bill details stay in
+                            this browser session.</p>
+                    </form>
+                    <div class="bill-preview" id="billPreview">
+                        <div class="bill-preview-top">
+                            <div><span class="bill-brand-name">BUDGETBASICS <i>·</i> TECHWIZ</span>
+                                <h3>Invoice</h3>
+                            </div>
+                            <span class="bill-type-tag">PKR · BILL</span>
+                        </div>
+                        <div class="bill-preview-meta"><span>Bill number<b
+                                    id="previewBillNumber">BB-2026-0001</b></span><span>Date<b
+                                    id="previewBillDate">—</b></span><span>Bill to<b
+                                    id="previewBillClient">Customer</b></span></div>
+                        <div class="bill-preview-issuer" id="previewBillIssuer">BudgetBasics</div>
+                        <div class="bill-preview-contact" id="previewBillContact"></div>
+                        <div class="bill-preview-table" id="billPreviewRows">
+                            <p>Add an item to see the bill preview.</p>
+                        </div>
+                        <div class="bill-preview-total"><span>TOTAL DUE</span><b id="previewBillTotal">PKR 0.00</b>
+                        </div>
+                        <div class="bill-preview-bottom">
+                            <p id="previewBillNote">Thank you.</p>
+                            <div class="bill-qr-wrap"><img id="billQr"
+                                    alt="QR code containing the bill number, date and total" hidden><span>SCAN FOR BILL
+                                    SUMMARY</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ticker-section" aria-label="Financial awareness tips">
+            <div class="ticker-track"><span>Track small expenses — they add up.</span><i>✦</i><span>Save before you
+                    spend.</span><i>✦</i><span>Needs come before wants.</span><i>✦</i><span>Plan your
+                    spending.</span><i>✦</i><span>Small savings build better habits.</span><i>✦</i><span>Track small
+                    expenses — they add up.</span><i>✦</i><span>Save before you spend.</span><i>✦</i><span>Needs come
+                    before wants.</span><i>✦</i><span>Plan your spending.</span><i>✦</i><span>Small savings build better
+                    habits.</span><i>✦</i></div>
+        </section>
+
+        <section class="section-pad section about-section" id="about">
+            <div class="shell about-grid">
+                <div class="about-copy reveal"><span class="section-index">08 / WHY BUDGETBASICS</span>
+                    <h2>Money skills start<br>with <em>understanding.</em></h2>
+                    <p>BudgetBasics is an educational website designed to help students learn personal budgeting
+                        fundamentals through plain-language guides, practical examples, interactive activities,
+                        calculators, and AI-assisted educational support.</p>
+                    <div class="about-pill-row"><span>Student project</span><span>Client-side learning
+                            tools</span><span>No account required</span></div>
+                </div>
+                <div class="aptech-card reveal">
+                    <div class="aptech-top"><img class="aptech-card-logo" src="https://aptech.cusc.vn/assets/img/core-img/logo/logo%20aptech2.png"
+                            alt="Aptech Computer Education"></div>
+                    <div class="aptech-rule"></div>
+                    <h3>Built through learning.</h3>
+                    <p>BudgetBasics is a student project developed as part of an Aptech learning experience.</p>
+                    <div class="aptech-location"><span>⌖</span><span><b>Aptech Rahim Yar Khan</b><small>Pakistan
+                                🇵🇰</small></span></div><small class="fine-print">This student project is not an
+                        official Aptech product.</small>
+                    <div class="team-credit"><span class="section-index">PROJECT TEAM</span>
+                        <div class="team-group-name"><small>CODING GROUP</small><b>NEX GEN coders</b></div>
+                        <p><b>Group leader</b> Noor Fatima</p>
+                        <p><b>Members</b> Asfad · Shanza Zahid</p>
+                    </div>
+                    <div class="techwiz-signature"><img class="techwiz-footer-logo" src="https://aptech-studentconnect.com/wp-content/uploads/2026/08/Techwiz-7-Logo-HI-RES-scaled.png"
+                            alt="TechWiz global IT competition logo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-pad section feedback-section" id="feedback">
+            <div class="shell feedback-grid">
+                <div class="section-heading reveal">
+                    <div><span class="section-index">09 / HELP US LEARN</span>
+                        <h2>Share your <em>feedback.</em></h2>
+                    </div>
+                    <p>This demo validates your response in the browser and shows a confirmation. It does not submit or
+                        store personal information.</p>
+                </div>
+                <form id="feedbackForm" class="feedback-form reveal" novalidate>
+                    <div class="field-grid"><label>Name<input id="feedbackName" maxlength="80" autocomplete="name"
+                                required></label><label>Email<input id="feedbackEmail" type="email" maxlength="120"
+                                autocomplete="email" required></label></div><label>How was the learning
+                        experience?<select id="feedbackRating" required>
+                            <option value="">Choose a rating</option>
+                            <option value="5">5 · Very helpful</option>
+                            <option value="4">4 · Helpful</option>
+                            <option value="3">3 · It was okay</option>
+                            <option value="2">2 · Could improve</option>
+                            <option value="1">1 · Needs work</option>
+                        </select></label><label>Comments <span class="subtle">(10–500 characters)</span><textarea
+                            id="feedbackComments" minlength="10" maxlength="500" rows="4" required></textarea></label>
+                    <div class="form-error" id="feedbackError" aria-live="polite"></div><button class="button"
+                        type="submit">Send feedback <span>↗</span></button>
+                    <div class="success-message" id="feedbackSuccess" role="status" hidden>Thanks for your feedback! It
+                        was reviewed in this browser session and was not sent or stored.</div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section-pad section contact-section" id="contact">
+            <div class="shell contact-grid">
+                <div class="contact-copy reveal"><span class="section-index">10 / GET IN TOUCH</span>
+                    <h2>Questions about<br>the <em>project?</em></h2>
+                    <p>This student project does not publish personal contact details. Use the form to draft a message;
+                        your message remains on this page and is not transmitted.</p>
+                    <div class="contact-detail"><span>⌖</span>
+                        <div><b>Project location</b><small>Aptech Rahim Yar Khan, Pakistan</small></div>
+                    </div>
+                    <div class="contact-detail"><span>✉</span>
+                        <div><b>Contact details</b><small>No public email or social account was provided.</small></div>
+                    </div>
+                </div>
+                <form id="contactForm" class="contact-form reveal" novalidate><span class="section-index">MESSAGE
+                        PREVIEW</span><label>Your name<input id="contactName" maxlength="80"
+                            required></label><label>Your email<input id="contactEmail" type="email" maxlength="120"
+                            required></label><label>Message<textarea id="contactMessage" rows="4" minlength="10"
+                            maxlength="500" required></textarea></label>
+                    <div class="form-error" id="contactError" aria-live="polite"></div><button class="button"
+                        type="submit">Preview message <span>↗</span></button>
+                    <div class="success-message" id="contactSuccess" role="status" hidden>Your message is ready. This
+                        demo does not transmit or store it.</div>
+                </form>
+            </div>
+        </section>
+
+        <section class="sitemap-section" id="sitemap">
+            <div class="shell sitemap-inner">
+                <div><span class="section-index">FIND YOUR WAY</span>
+                    <h2>Keep exploring.</h2>
+                </div>
+                <div class="sitemap-links"><a href="#home">Home</a><a href="#basics">Budgeting basics</a><a
+                        href="#needs-wants">Needs vs wants</a><a href="#tools">50-30-20 & tools</a><a
+                        href="#tools">Savings goals</a><a href="#tools">Expense planner</a><a href="#mistakes">Money
+                        mistakes</a><a href="#gallery">Learning gallery</a><a href="#assistant">BudgetBee AI</a><a
+                        href="#about">About & Aptech</a><a href="#feedback">Feedback</a><a href="#contact">Contact</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="shell footer-main"><a class="brand footer-brand" href="#home"><span><strong>BudgetBasics</strong><small>NextGen
+                        BudgetBee</small></span></a>
+            <p>Smart money.<br>Smarter choices.</p>
+            <div class="footer-meta"><span>NEX GEN coders · Student project</span><span><img class="aptech-footer-logo"
+                        src="https://aptech.cusc.vn/assets/img/core-img/logo/logo%20aptech2.png" alt="Aptech Computer Education"></span><span>Rahim
+                    Yar
+                    Khan · Pakistan 🇵🇰</span></div>
+            <div class="footer-stats"><span>SESSION VISITS<b id="visitCount">1</b></span><span>LOCAL TIME<b
+                        id="localClock">—</b></span><span id="localDate">—</span></div>
+        </div>
+        <div class="shell footer-extra">
+            <div class="footer-contact"><span class="section-index">SAY HELLO</span><a href="#contact">Contact the
+                    project <span aria-hidden="true">↗</span></a><small>Rahim Yar Khan · Pakistan</small></div>
+            <div class="footer-socials" aria-label="Social media platforms">
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="3" width="18" height="18" rx="5" />
+                        <circle cx="12" cy="12" r="4" />
+                        <circle class="social-dot" cx="18" cy="6" r="1" />
+                    </svg></a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5c-.9-.1-2-.2-3.1-.2-3.2 0-5.4 1.9-5.4 5.5V9H6v4h3.5v8z" />
+                    </svg></a>
+                <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M14 3h3c.2 2.1 1.4 3.6 4 4v3.2a9 9 0 0 1-4-1.3v6.2a6.2 6.2 0 1 1-6.2-6.2c.4 0 .8 0 1.2.1v3.4a3 3 0 1 0 1.9 2.8z" />
+                    </svg></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg
+                        viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M5 3a2 2 0 1 0 0 4 2 2 0 0 0 0-4M3 9h4v12H3zm6 0h4v1.7c.7-1.2 1.9-2 3.8-2 3.1 0 4.2 2 4.2 5.2V21h-4v-6.3c0-1.6-.3-2.8-1.9-2.8s-2.1 1.2-2.1 2.8V21H9z" />
+                    </svg></a>
+            </div>
+        </div>
+        <div class="shell footer-bottom"><span>© 2026 BudgetBasics — NextGen BudgetBee</span><span>Made with technology
+                in Pakistan <span aria-hidden="true">✦</span></span><a href="#top">Back to top ↑</a></div>
+    </footer>
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+    <button class="chat-launcher" id="chatLauncher" aria-label="Open BudgetBee AI chat"><span class="launcher-bee"
+            aria-hidden="true"><i class="mini-wing"></i><b></b><i class="mini-wing"></i></span><span
+            class="launcher-label">CHAT WITH BUDGETBEE</span><i></i></button>
+    <section class="print-only" id="printReport" aria-label="BudgetBasics calculation report"></section>
+    <div class="call-overlay" id="callOverlay" role="dialog" aria-modal="true" aria-labelledby="callTitle" hidden>
+        <button class="call-close" id="closeCall" aria-label="Close voice conversation">×</button>
+        <div class="call-content"><span class="section-index">BROWSER VOICE CONVERSATION</span>
+            <div class="call-avatar" id="callAvatar">✦</div>
+            <h2 id="callTitle">Talk with Nova</h2>
+            <p id="callStatus">Ready when you are</p>
+            <div class="call-wave" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+            <div class="call-timer" id="callTimer">00:00</div>
+            <p class="call-explain">This uses your browser's speech recognition and speech synthesis. It is not a phone
+                call; availability depends on your browser and device.</p>
+            <div class="call-actions"><button class="call-action" id="muteCall">♩<span>Mute mic</span></button><button
+                    class="call-action" id="toggleCallSpeaker">◖))<span>Mute audio</span></button><button
+                    class="end-call" id="endCall">End session</button><button class="call-action"
+                    id="switchCallPersona">⇄<span>Switch guide</span></button></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+
+
